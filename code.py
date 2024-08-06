@@ -18,7 +18,7 @@ async def start(update: Update, context: CallbackContext) -> None:
 
     text = (
         f"Hello {mention},\n"
-        f"Your wallet balance is: {BALANCE} USDT ,USDT MINING STILL RUNNING \n"
+        f"Your wallet balance is: {BALANCE} USDT  \n"
         f"trying to send crypto :given token failed \n"
         f"Pending withdrawal: Please ask Alan Walker to provide the confirmation code to access the server and withdraw."
     )
@@ -26,7 +26,7 @@ async def start(update: Update, context: CallbackContext) -> None:
     keyboard = [
         [InlineKeyboardButton("Show Balance", callback_data='balance')],
         [InlineKeyboardButton("Withdraw", callback_data='withdraw')],
-        [InlineKeyboardButton("Help", callback_data='help')]
+        [InlineKeyboardButton("refresh data", callback_data='reboot')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(text, reply_markup=reply_markup, parse_mode=ParseMode.HTML)
@@ -41,14 +41,10 @@ async def button(update: Update, context: CallbackContext) -> None:
         await query.edit_message_text(text="Server Error: Unable to process the withdrawal request at this time. Please try again later")
         global PENDING_WITHDRAWAL
         PENDING_WITHDRAWAL = True
-    elif query.data == 'help':
+    elif query.data == 'reboot':
         help_text = (
-            "Commands available:\n"
-            "- /start: Start the bot and see your balance.\n"
-            "- Inline Buttons:\n"
-            "  - Show Balance: Display your wallet balance.\n"
-            "  - Withdraw: Request a withdrawal (pending confirmation).\n"
-            "  - Help: Show this help message."
+            f"{ failed data to access local server}\n"
+            f"{code failed }\n"
         )
         await query.edit_message_text(text=help_text)
 
