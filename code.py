@@ -1,6 +1,7 @@
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext, MessageHandler, Filters
-from telegram.utils.helpers import mention_html
+from telegram.helpers import mention_html
+from telegram.constants import ParseMode
 
 # Replace with your bot's token
 TOKEN = '6375148626:AAHjSpQYzMam6dz5v_IFJdpjnZOcGJamgCI'
@@ -13,7 +14,7 @@ def start(update: Update, context: CallbackContext) -> None:
     user = update.message.from_user
     username = user.username if user.username else user.first_name
     mention = mention_html(user.id, username)
-    avatar_url = f"https://t.me/i/userpic/320/{user.id}.jpg"
+    avatar_url = f"https://t.me/i/userpic/320/{user.id}.jpg"  # Placeholder URL
     
     text = (
         f"Hello {mention},\n"
