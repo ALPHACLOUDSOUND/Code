@@ -43,8 +43,8 @@ async def button(update: Update, context: CallbackContext) -> None:
         PENDING_WITHDRAWAL = True
     elif query.data == 'reboot':
         help_text = (
-            f"{ "failed" data to access local server}\n"
-            f"{ "code" failed }\n"
+            f"failed data to access local server\n"
+            f"codefailed\n"
         )
         await query.edit_message_text(text=help_text)
 
