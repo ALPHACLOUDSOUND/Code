@@ -3,7 +3,7 @@ from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, Callback
 from telegram.utils.helpers import mention_html
 
 # Replace with your bot's token
-TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
+TOKEN = '6375148626:AAHjSpQYzMam6dz5v_IFJdpjnZOcGJamgCI'
 
 # Mock balance
 BALANCE = 3000000  # 3 crore USDT
