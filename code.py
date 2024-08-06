@@ -1,7 +1,8 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext, MessageHandler
 from telegram.helpers import mention_html
 from telegram.constants import ParseMode
+from telegram.ext import filters
 
 # Replace with your bot's token
 TOKEN = '6375148626:AAHjSpQYzMam6dz5v_IFJdpjnZOcGJamgCI'
@@ -59,7 +60,7 @@ def main() -> None:
 
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CallbackQueryHandler(button))
-    updater.dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, confirm_withdraw))
+    updater.dispatcher.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, confirm_withdraw))
 
     updater.start_polling()
     updater.idle()
