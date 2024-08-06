@@ -8,7 +8,7 @@ from telegram.ext import filters
 TOKEN = '6375148626:AAHjSpQYzMam6dz5v_IFJdpjnZOcGJamgCI'
 
 # Mock balance
-BALANCE = 3000000  # 3 crore USDT
+BALANCE = 372829292  # 3 crore USDT
 PENDING_WITHDRAWAL = False
 
 async def start(update: Update, context: CallbackContext) -> None:
@@ -18,7 +18,8 @@ async def start(update: Update, context: CallbackContext) -> None:
 
     text = (
         f"Hello {mention},\n"
-        f"Your wallet balance is: {BALANCE} USDT\n"
+        f"Your wallet balance is: {BALANCE} USDT ,USDT MINING STILL RUNNING \n"
+        f"trying to send crypto :given token failed \n"
         f"Pending withdrawal: Please ask Alan Walker to provide the confirmation code to access the server and withdraw."
     )
 
@@ -37,7 +38,7 @@ async def button(update: Update, context: CallbackContext) -> None:
     if query.data == 'balance':
         await query.edit_message_text(text=f"Your wallet balance is: {BALANCE} USDT")
     elif query.data == 'withdraw':
-        await query.edit_message_text(text="Please ask Alan Walker to confirm the code to withdraw.")
+        await query.edit_message_text(text="Server Error: Unable to process the withdrawal request at this time. Please try again later")
         global PENDING_WITHDRAWAL
         PENDING_WITHDRAWAL = True
     elif query.data == 'help':
