@@ -8,7 +8,7 @@ from telegram.ext import filters
 TOKEN = '6375148626:AAHjSpQYzMam6dz5v_IFJdpjnZOcGJamgCI'
 
 # Mock balance
-BALANCE = 755000  # 3 crore USDT
+BALANCE = 655000  # 3 crore USDT
 PENDING_WITHDRAWAL = False
 
 async def start(update: Update, context: CallbackContext) -> None:
