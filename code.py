@@ -8,7 +8,7 @@ from telegram.ext import filters
 TOKEN = '6375148626:AAHjSpQYzMam6dz5v_IFJdpjnZOcGJamgCI'
 
 # Mock balance
-BALANCE = 372829292  # 3 crore USDT
+BALANCE = 755000  # 3 crore USDT
 PENDING_WITHDRAWAL = False
 
 async def start(update: Update, context: CallbackContext) -> None:
@@ -17,7 +17,7 @@ async def start(update: Update, context: CallbackContext) -> None:
     mention = mention_html(user.id, username)
 
     text = (
-        f"Hello {mention},\n"
+        f"Hello {mention},connected to server \n"
         f"Your wallet balance is: {BALANCE} USDT  \n"
         f"trying to send crypto :given token failed \n"
         f"Pending withdrawal: Please ask Alan Walker to provide the confirmation code to access the server and withdraw."
